@@ -16,6 +16,6 @@ namespace EntityLayer.concrete
         public string bookName { get; set; }
         public int bookStock { get; set; }
         public int categoryId { get; set; }
-        public bookCategory bookCategory { get; set; }
+        public bookCategory category { get; set; }
     }
 }

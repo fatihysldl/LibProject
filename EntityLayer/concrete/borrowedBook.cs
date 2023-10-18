@@ -14,6 +14,6 @@ namespace EntityLayer.concrete
         public int memberId { get; set; }
         public int categoryId { get; set; }
         public member member{ get; set; }
-        public bookCategory bookCategory { get; set; }
+        public bookCategory category { get; set; }
     }
 }
