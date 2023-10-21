@@ -1,0 +1,39 @@
+﻿@using EntityLayer.concrete
+@model List<member>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Members</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Member Id</th>
+        <th>Member Name</th>
+        <th>Member Surname</th>
+        <th>Member Phone</th>
+        <th>Edit</th>
+    </tr>
+
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.memberId</td>
+                <td>@i.memberName </td>
+                <td>@i.memberSurname</td>
+                <td>@i.memberPhone</td>
+                <td>
+                    <a href="~/member/deleteMember/@i.memberId" style=" display: flex; align-items: center" class="btn btn-warning">
+                        Delete
+                    </a>
+                    <a href="~/member/editMember/@i.memberId" class="btn btn-success" style=" display: flex; align-items: center; margin-top:5px;">
+                        Update
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="~/member/addMember" class="btn btn-primary">Save</a>

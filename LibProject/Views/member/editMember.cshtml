@@ -1,0 +1,22 @@
+﻿@model EntityLayer.concrete.member
+@{
+    ViewData["Title"] = "editMember";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit Member</h1>
+
+@using (Html.BeginForm("editMember", "member", FormMethod.Post))
+{
+    <labal>Member Name</labal>
+    @Html.TextBoxFor(i => i.memberName, new { @class = "form-control" })
+    <br />
+    <labal>Member Surname</labal>
+    @Html.TextBoxFor(i => i.memberSurname, new { @class = "form-control" })
+    <br />
+    <labal>Member Phone</labal>
+    @Html.TextBoxFor(i => i.memberPhone, new { @class = "form-control" })
+    <br />
+    @Html.HiddenFor(i=>i.memberId)
+    <button class="btn btn-primary">Add</button>
+}
