@@ -1,0 +1,22 @@
+﻿@model EntityLayer.concrete.book
+@{
+    ViewData["Title"] = "editBook";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit Book</h1>
+
+@using (Html.BeginForm("editBook", "book", FormMethod.Post))
+{
+    <labal>Book Name</labal>
+    @Html.TextBoxFor(i => i.bookName, new { @class = "form-control" })
+    <br />
+    <labal>Book Stock</labal>
+    @Html.TextBoxFor(i => i.bookStock, new { @class = "form-control" })
+    <br />
+    <labal>Book Category</labal>
+    @Html.DropDownListFor(i => i.categoryId, (List<SelectListItem>)ViewBag.v2, new { @class = "form-control" })
+    <br />
+    @Html.HiddenFor(i=>i.bookId)
+    <button class="btn btn-primary">Add</button>
+}

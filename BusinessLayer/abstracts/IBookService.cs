@@ -14,5 +14,6 @@ namespace BusinessLayer.abstracts
         void delete(book p);
         List<book> getAll();
         book getById(int Id);
+
     }
 }

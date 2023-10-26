@@ -14,6 +14,13 @@ builder.Services.AddDbContext<context>();
 builder.Services.AddScoped<IMemberDal, EfMemberDal>();
 builder.Services.AddScoped<IMemberService, memberManager>();
 
+builder.Services.AddScoped<IBookDal, EfBookDal>();
+builder.Services.AddScoped<IBookService, bookManager>();
+
+builder.Services.AddScoped<IBookCategoryDal,EfBookCategoryDal>();
+builder.Services.AddScoped<IBookCategoryService, bookCategoryManager>();
+
+
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
