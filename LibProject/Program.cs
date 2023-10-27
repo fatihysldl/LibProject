@@ -20,6 +20,9 @@ builder.Services.AddScoped<IBookService, bookManager>();
 builder.Services.AddScoped<IBookCategoryDal,EfBookCategoryDal>();
 builder.Services.AddScoped<IBookCategoryService, bookCategoryManager>();
 
+builder.Services.AddScoped<IBorrowedBookDal, EfBorrowedBooksDal>();
+builder.Services.AddScoped<IBorrowedBookService, borrowedBookManager>();
+
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.

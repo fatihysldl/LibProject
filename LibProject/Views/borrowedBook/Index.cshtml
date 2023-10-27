@@ -1,0 +1,39 @@
+﻿@using EntityLayer.concrete
+@model List<borrowedBook>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Borrowed Books</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Borrowed Book Id</th>
+        <th>Member Name</th>
+        <th>Category Name</th>
+        <th>Book Name</th>
+
+    </tr>
+
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.Id</td>
+                <td>@i.member.memberName </td>
+                <td>@i.category.category</td>
+                <td>@i.book.bookName</td>
+                <td>
+                    <a href="#" style=" display: flex; align-items: center" class="btn btn-warning">
+                        Delete
+                    </a>
+                    <a href="~/borrowedBook/addBorrowedBooks/@i.Id" class="btn btn-success" style=" display: flex; align-items: center; margin-top:5px;">
+                        Update
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
