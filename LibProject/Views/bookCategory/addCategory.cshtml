@@ -1,0 +1,17 @@
+﻿@model EntityLayer.concrete.bookCategory
+@{
+    ViewData["Title"] = "addCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Add Category</h1>
+
+
+@using (Html.BeginForm("addCategory", "bookCategory", FormMethod.Post))
+{
+    <labal>Category Name</labal>
+    @Html.TextBoxFor(i => i.category, new { @class = "form-control" })
+    <br />
+    @Html.HiddenFor(i=>i.categoryId)
+    <button class="btn btn-primary">Save</button>
+}
