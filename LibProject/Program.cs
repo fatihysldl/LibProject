@@ -23,6 +23,9 @@ builder.Services.AddScoped<IBookCategoryService, bookCategoryManager>();
 builder.Services.AddScoped<IBorrowedBookDal, EfBorrowedBooksDal>();
 builder.Services.AddScoped<IBorrowedBookService, borrowedBookManager>();
 
+builder.Services.AddScoped<IAdminDal,EfAdminDal>();
+builder.Services.AddScoped<IAdminService, adminManager>();
+
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.
