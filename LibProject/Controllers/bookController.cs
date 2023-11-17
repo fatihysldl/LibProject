@@ -18,7 +18,7 @@ namespace LibProject.Controllers
 
         public IActionResult Index()
         {
-            var values = _bookService.getAll();
+            var values = _bookService.List(i => i.status == true);
             return View(values);
         }
 
@@ -39,7 +39,8 @@ namespace LibProject.Controllers
         [HttpPost]
         public IActionResult addBook(book p)
         {
-            _bookService.insert(p);
+            p.status = true;
+            _bookService.insert(p);           
             return RedirectToAction("Index");
         }
 
@@ -67,7 +68,8 @@ namespace LibProject.Controllers
         public IActionResult deleteBook(int Id)
         {
             var data = _bookService.getById(Id);
-            _bookService.delete(data);
+            data.status = false;
+            _bookService.update(data);
             return RedirectToAction("Index");
         }
     }
