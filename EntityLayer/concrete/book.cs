@@ -14,8 +14,10 @@ namespace EntityLayer.concrete
 
         [StringLength(15)]
         public string bookName { get; set; }
+        public bool status { get; set; }
         public int bookStock { get; set; }
         public int categoryId { get; set; }
+
         public bookCategory category { get; set; }
     }
 }
