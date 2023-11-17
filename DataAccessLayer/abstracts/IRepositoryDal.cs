@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,6 +14,8 @@ namespace DataAccessLayer.abstracts
         void delete(T p);
         List<T> getAll();
         T getById(int Id);
+
+        List<T> List(Expression<Func<T, bool>> filter);
 
     }
 }

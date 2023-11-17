@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,6 +15,6 @@ namespace BusinessLayer.abstracts
         void delete(book p);
         List<book> getAll();
         book getById(int Id);
-
+        List<book> List(Expression<Func<book, bool>> filter);
     }
 }
