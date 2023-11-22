@@ -7,11 +7,11 @@ using System.Security.Permissions;
 
 namespace LibProject.Controllers
 {
-    public class adminLoginController : Controller
+    public class adminController : Controller
     {
         private readonly IAdminService _admin;
 
-        public adminLoginController(IAdminService admin)
+        public adminController(IAdminService admin)
         {
             _admin = admin;
         }
