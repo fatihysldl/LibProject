@@ -4,19 +4,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Add Borrowed Book</h1>
-
+<h1>addBorrowedBook</h1>
 @using (Html.BeginForm("addBorrowedBook", "borrowedBook", FormMethod.Post))
 {
     <label>Member</label>
 
-    @Html.DropDownListFor(i => i.memberId, (List<SelectListItem>)ViewBag.v1, new { @class = "form-control" })
+    @Html.DropDownListFor(i => i.memberId, (List<SelectListItem>)ViewBag.v1, new { @class = "form-control"})
     <label>Book </label>
-    @Html.DropDownListFor(i => i.bookId, (List<SelectListItem>)ViewBag.v3, new { @class = "form-control" , @disabled = "disabled"})
+    @Html.DropDownListFor(i => i.bookId, (List<SelectListItem>)ViewBag.v3, new { @class = "form-control"})
     <br />
     <label>Book Category</label>
-    @Html.DropDownListFor(i => i.categoryId, (List<SelectListItem>)ViewBag.v2, new { @class = "form-control", @disabled = "disabled" })
+    @Html.DropDownListFor(i => i.categoryId, (List<SelectListItem>)ViewBag.v2, new { @class = "form-control"})
     <br />
     @Html.HiddenFor(i=>i.Id)
     <button class="btn btn-primary">Save</button>
 }
+@*//, @disabled = "disabled"*@
