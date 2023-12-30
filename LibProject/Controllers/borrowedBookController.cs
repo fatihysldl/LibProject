@@ -108,6 +108,11 @@ namespace LibProject.Controllers
         [HttpPost]
         public IActionResult addBorrowedBook(borrowedBook p, int bookId)
         {
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 154f9157becfea0ab75b3e37c4276d242d2f690e
             _borrowedBookService.insert(p);
 
             // Kitap stoğunu azaltma işlemini sadece ilgili kitap üzerinde yapmak için gerekli olan book
